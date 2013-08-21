@@ -32,7 +32,7 @@ class PlayCommand(object):
 
     def __init__(self, args):
         self._original_args = args.original_args
-        self._extra_vars = self._make_json_extra_vars(args.extra_vars)
+        self._extra_vars = self._make_extra_vars_dict(args.extra_vars)
 
     @property
     def original_args(self):
@@ -54,7 +54,7 @@ class PlayCommand(object):
         subprocess.call(self.command_line, shell=True)
 
     @classmethod
-    def _make_json_extra_vars(cls, extra_vars):
+    def _make_extra_vars_dict(cls, extra_vars):
         return dict(
             (k, v.split(',') if ',' in v else v)
             for k, v in ansible.utils.parse_kv(extra_vars).iteritems()
