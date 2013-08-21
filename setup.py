@@ -13,10 +13,6 @@ class PyTest(TestCommand):
         import pytest
         pytest.main(self.test_args)
 
-requires = [
-    'ansible',
-]
-
 setup(
     name='ansible_playbook_wrapper',
     version='0.0.1',
