@@ -5,6 +5,7 @@ wrapper for ansible-playbook CLI.
 
 dependencies
 ------------
+- python2.7(argparse module)
 - ansible
 - pytest
 
@@ -14,6 +15,7 @@ install
 ::
 
   $ git clone https://github.com/succhiello/ansible-playbook-wrapper.git
+  $ cd ansible-playbook-wrapper
   $ python setup.py install
 
 usage
